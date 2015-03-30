@@ -1,6 +1,6 @@
 package maputil
 
-type RejectFunc func(interface{}, interface{}) bool
+type RejectFunc func(k interface{}, v interface{}) bool
 
 /**
 Invokes `RejectFunc` for each k,v pair in the map, deleting elements for which
