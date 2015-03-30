@@ -16,7 +16,7 @@ Example:
 	prices["cookies"] = 80
 	prices["watermelons"] = 200
 	prices["vodka"] = 400
-	result := maputil.Select(myMap, Pricey)  // { "watermelons" : 200, "vodka": 400 }
+	result := maputil.Select(prices, Pricey)  // { "watermelons" : 200, "vodka": 400 }
 */
 func Select(hash map[interface{}]interface{}, selectFunc SelectFunc) map[interface{}]interface{} {
 	if hash == nil || selectFunc == nil {

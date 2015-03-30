@@ -49,7 +49,7 @@ Example:
     prices["cookies"] = 80
     prices["watermelons"] = 200
     prices["vodka"] = 400
-    result := maputil.Reject(myMap, Pricey)  // { "toothpaste" : 100, "cookie": 80 }
+    result := maputil.Reject(prices, Pricey)  // { "toothpaste" : 100, "cookie": 80 }
 
 #### func  Select
 
@@ -69,7 +69,7 @@ Example:
     prices["cookies"] = 80
     prices["watermelons"] = 200
     prices["vodka"] = 400
-    result := maputil.Select(myMap, Pricey)  // { "watermelons" : 200, "vodka": 400 }
+    result := maputil.Select(prices, Pricey)  // { "watermelons" : 200, "vodka": 400 }
 
 #### type InjectFunc
 
