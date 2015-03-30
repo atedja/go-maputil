@@ -16,13 +16,20 @@ The result becomes the memo value for the next iteration.
 
 Example:
 
-    func Sum(memo interface{}, e interface{}) interface{} {
-    	return memo.(int) + e.(int)
+    func GallonUsage(memo interface{}, k interface{}, v interface{}) interface{} {
+    	m := memo.(map[interface{}]interface{})
+    	m[k] = float64(v.(int)) / 40.0
+    	return m
     }
 
-    var myArray = []interface{}{1, 2, 3, 4}
-    result := Inject(myArray, nil, Sum)     // result is 10
-    result := Inject(myArray, 10, Sum)      // result is 20
+    var distances = make(map[interface{}]interface{})
+    distances["Las Vegas"] = 269
+    distances["San Francisco"] = 382
+    distances["San Diego"] = 120
+    distances["Sacramento"] = 384
+    var gallons = make(map[interface{}]interface{})
+    maputil.Inject(distances, gallons, GallonUsage)
+    // gallons = { "Las Vegas": 6.725, "San Francisco": 9.55, "San Diego": 3.0, "Sacramento": 9.6 }
 
 #### func  Reject
 
@@ -42,7 +49,7 @@ Example:
     prices["cookies"] = 80
     prices["watermelons"] = 200
     prices["vodka"] = 400
-    result := Reject(myMap, Pricey)  // { "toothpaste" : 100, "cookie": 80 }
+    result := maputil.Reject(myMap, Pricey)  // { "toothpaste" : 100, "cookie": 80 }
 
 #### func  Select
 
@@ -62,7 +69,7 @@ Example:
     prices["cookies"] = 80
     prices["watermelons"] = 200
     prices["vodka"] = 400
-    result := Select(myMap, Pricey)  // { "watermelons" : 200, "vodka": 400 }
+    result := maputil.Select(myMap, Pricey)  // { "watermelons" : 200, "vodka": 400 }
 
 #### type InjectFunc
 

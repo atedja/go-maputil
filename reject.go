@@ -16,7 +16,7 @@ Example:
 	prices["cookies"] = 80
 	prices["watermelons"] = 200
 	prices["vodka"] = 400
-	result := Reject(myMap, Pricey)  // { "toothpaste" : 100, "cookie": 80 }
+	result := maputil.Reject(myMap, Pricey)  // { "toothpaste" : 100, "cookie": 80 }
 */
 func Reject(hash map[interface{}]interface{}, rejectFunc RejectFunc) map[interface{}]interface{} {
 	if hash == nil || rejectFunc == nil {
