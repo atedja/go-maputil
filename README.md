@@ -81,12 +81,12 @@ type InjectFunc func(memo interface{}, k interface{}, v interface{}) interface{}
 #### type RejectFunc
 
 ```go
-type RejectFunc func(interface{}, interface{}) bool
+type RejectFunc func(k interface{}, v interface{}) bool
 ```
 
 
 #### type SelectFunc
 
 ```go
-type SelectFunc func(interface{}, interface{}) bool
+type SelectFunc func(k interface{}, v interface{}) bool
 ```
