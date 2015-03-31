@@ -2,7 +2,7 @@ package maputil
 
 type SelectFunc func(k interface{}, v interface{}) bool
 
-/**
+/*
 Invokes `SelectFunc` for each k,v pair in the map, keeping elements for which
 the function returns true. Opposite of Reject().
 

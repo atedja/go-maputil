@@ -36,7 +36,7 @@ Example:
 ```go
 func Reject(hash map[interface{}]interface{}, rejectFunc RejectFunc) map[interface{}]interface{}
 ```
-* Invokes `RejectFunc` for each k,v pair in the map, deleting elements for which
+Invokes `RejectFunc` for each k,v pair in the map, deleting elements for which
 the function returns true. Opposite of Select().
 
 Example:
@@ -56,7 +56,7 @@ Example:
 ```go
 func Select(hash map[interface{}]interface{}, selectFunc SelectFunc) map[interface{}]interface{}
 ```
-* Invokes `SelectFunc` for each k,v pair in the map, keeping elements for which
+Invokes `SelectFunc` for each k,v pair in the map, keeping elements for which
 the function returns true. Opposite of Reject().
 
 Example:
